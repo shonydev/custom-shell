@@ -1,8 +1,6 @@
-# MyShell
+# custom-shell
 
-Un shell de Windows propio, construido para poder seguir creciendo sin
-reescribirlo. Este documento explica el porqué de la arquitectura, no solo
-el qué.
+Un shell de Windows propio.
 
 ## Idea central: un solo flag, dos modos de ejecución
 
@@ -68,19 +66,6 @@ se entere, y probar un módulo aislado sin levantar toda la shell.
 | Desktop icons, Alt+Tab propio, escritorios virtuales | No empezado — necesarios solo si vas a `FullShell` en serio |
 | DI container | Deliberadamente no añadido aún — con 5 módulos, wiring manual es más simple que añadir un contenedor. Revisar si esto cambia. |
 
-## Próximos pasos sugeridos, en orden
-
-1. Portar volumen/brillo del proyecto viejo a `SystemControlsModule`
-   (un widget a la vez).
-2. Portar el estado real de Wifi/Bluetooth (`Windows.Devices.WiFi` /
-   `Windows.Devices.Bluetooth`) — hoy son solo íconos estáticos.
-3. Rellenar el parseo de `TrayHost` usando RetroBar como referencia.
-4. Probar `DevOverlay` a diario una temporada — es donde vive el 90% del
-   valor con el 10% del riesgo.
-5. Solo cuando lo anterior sea sólido, montar una VM y probar `FullShell`.
-
----
-
 ## Composition root (antes no existía)
 
 Hasta esta pasada, el proyecto no tenía `App.xaml.cs` ni
@@ -125,6 +110,19 @@ De izquierda a derecha:
 Ni el botón de búsqueda ni el de power abren nada todavía — son chrome
 visual con un `TODO` marcado en el código para cuando construyas esas
 superficies (launcher, flyout de apagado).
+
+## Próximos pasos sugeridos, en orden
+
+1. Portar volumen/brillo del proyecto viejo a `SystemControlsModule`
+   (un widget a la vez).
+2. Portar el estado real de Wifi/Bluetooth (`Windows.Devices.WiFi` /
+   `Windows.Devices.Bluetooth`) — hoy son solo íconos estáticos.
+3. Rellenar el parseo de `TrayHost` usando RetroBar como referencia.
+4. Probar `DevOverlay` a diario una temporada — es donde vive el 90% del
+   valor con el 10% del riesgo.
+5. Solo cuando lo anterior sea sólido, montar una VM y probar `FullShell`.
+
+---
 
 ## Cómo aplicar/probar
 
