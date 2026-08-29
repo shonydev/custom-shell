@@ -28,6 +28,13 @@ internal static class NativeMethods
 
     public const int ABS_AUTOHIDE = 0x1;
 
+    // Sent to our registered callback message when something changes that
+    // might affect our docked position (another AppBar, display change).
+    public const uint ABN_POSCHANGED = 0x0001;
+
+    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+    public static extern uint RegisterWindowMessage(string lpString);
+
     [StructLayout(LayoutKind.Sequential)]
     public struct APPBARDATA
     {

@@ -16,6 +16,22 @@ public sealed class AppBar(Window window, uint callbackMessageId) : IDisposable
     private readonly HwndSource _source = (HwndSource)PresentationSource.FromVisual(window)!;
     private bool _registered;
 
+    /// <summary>Value the AppBar callback message carries when something
+    /// changed that might affect our docked position (another AppBar
+    /// docked/undocked, display reconfigured). Compare against
+    /// <c>wParam</c> in your window's message hook.</summary>
+    public const uint PosChanged = NativeMethods.ABN_POSCHANGED;
+
+    /// <summary>Registers (or looks up) a system-wide window message id for
+    /// <paramref name="name"/> - needed so Explorer has something to send
+    /// us AppBar notifications on. Wraps NativeMethods since it's internal
+    /// to this assembly and the Host project only needs this one call.</summary>
+    public static uint RegisterCallbackMessage(string name)
+    {
+        var id = NativeMethods.RegisterWindowMessage(name);
+        return id == 0 ? 0x8000u /* WM_APP fallback, extremely unlikely path */ : id;
+    }
+
     public void DockTo(ScreenEdge edge, double height)
     {
         var handle = _source.Handle;

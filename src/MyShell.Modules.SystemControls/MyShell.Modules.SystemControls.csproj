@@ -9,4 +9,11 @@
   <ItemGroup>
     <ProjectReference Include="..\MyShell.Core\MyShell.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- BrightnessWidget reads/writes WmiMonitorBrightness(Methods) under
+         root\WMI - only needs this package, not the old NAudio dependency
+         (VolumeWidget below talks to Core Audio directly via COM interop
+         instead of pulling in NAudio, so it's the only new package here). -->
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
 </Project>

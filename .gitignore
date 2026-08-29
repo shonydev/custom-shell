@@ -45,10 +45,13 @@ Desktop.ini
 *.orig
 *.rej
 
-# WPF / Windows app generated files
+# WPF / Windows app generated files (only the truly auto-generated
+# partials from the XAML compiler live under obj/ - *.xaml.cs is real,
+# hand-written code-behind and must NOT be ignored here. It was ignored
+# before, which is why App.xaml.cs / ShellWindow.xaml.cs kept disappearing
+# from commits even though the README described them as done.
 *.g.cs
 *.g.i.cs
-*.xaml.cs
 
 # Publish outputs
 publish/
