@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MyShell.Core/MyShell.Core.csproj" />
+    <Project Path="src/MyShell.Host/MyShell.Host.csproj" />
+    <Project Path="src/MyShell.Modules.Clock/MyShell.Modules.Clock.csproj" />
+    <Project Path="src/MyShell.Modules.StartMenu/MyShell.Modules.StartMenu.csproj" />
+    <Project Path="src/MyShell.Modules.SystemControls/MyShell.Modules.SystemControls.csproj" />
+    <Project Path="src/MyShell.Modules.Taskbar/MyShell.Modules.Taskbar.csproj" />
+    <Project Path="src/MyShell.Modules.Tray/MyShell.Modules.Tray.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,65 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.pdb
+*.aps
+*.cache
+*.ilk
+*.log
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test results
+TestResults/
+*.trx
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary / local files
+*.tmp
+*.temp
+*.orig
+*.rej
+
+# WPF / Windows app generated files
+*.g.cs
+*.g.i.cs
+*.xaml.cs
+
+# Publish outputs
+publish/
+
+# Local environment and secrets
+.env
+.env.*
+secrets.json
+appsettings.Development.json
+
+# Keep the project files themselves
+!src/**/*.csproj
+!src/**/*.sln
+!src/**/*.slnx

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>MyShell.Host</RootNamespace>
+    <AssemblyName>MyShell</AssemblyName>
+    <!-- ApplicationManifest control UAC prompting; a real shell often needs
+         to run un-elevated with careful UAC handling. Revisit before you
+         ever flip to FullShell mode for real. -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyShell.Core\MyShell.Core.csproj" />
+    <ProjectReference Include="..\MyShell.Modules.Taskbar\MyShell.Modules.Taskbar.csproj" />
+    <ProjectReference Include="..\MyShell.Modules.Tray\MyShell.Modules.Tray.csproj" />
+    <ProjectReference Include="..\MyShell.Modules.SystemControls\MyShell.Modules.SystemControls.csproj" />
+    <ProjectReference Include="..\MyShell.Modules.StartMenu\MyShell.Modules.StartMenu.csproj" />
+    <ProjectReference Include="..\MyShell.Modules.Clock\MyShell.Modules.Clock.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
